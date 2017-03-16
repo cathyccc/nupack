@@ -15,5 +15,12 @@ describe Nupack::Markup do
         expect(Nupack::Markup.total("$10,000.00","1 person","food")).to eql(10500.0)
       end
     end
+
+    context "given flat rate of '$1,299.99'" do
+      it "should return '1364.99'" do
+        expect(Nupack::Markup.total("$1,299.99","1 person","food")).to eql(1364.99)
+      end
+    end
+
   end
 end
