@@ -1,0 +1,12 @@
+Reflection
+
+Nupack is a markup calculator is based on the assumption that the input consists of 3 argument inputs rather than 1 single string. Since another system is used to calculate the base price, the assumption that its return value can be passed onto this calculator as the first argument is made.
+
+The process that help guide the development of this calculator was through TDD with RSpec. It helped separate the code into three main calculations
+  • a new 5% flat markup on the base price
+  • a 1.2% markup for every number of workers required to complete the job; calculated on top of the new flat markup from the part 1
+  • a markup based on the type of material from the new flat markup
+
+While working on this gem, I used TDD with RSpec to write behavior driven tests with write my code. This process was very new to me and learning to write RSpec DSL became a new learning opportunity. Some may argue that it was more timely to do, but in retrospect I found myself debugging a lot less. I definitely felt that if I were to build my calculator first and then have my tests run, I would have wasted a lot more time figuring out why my test might have failed.
+
+Another design option I considered was having a single string as input of all 3 variables. As I have stated above, considering that another calculator is used to provide the first input. I decided it was necessary for this calculator to receive the return value of that calculator so that the performance of this calculator would not be affected with the splitting of the string. 
